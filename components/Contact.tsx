@@ -2,7 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { profile } from "@/lib/data";
+import { profile, socials } from "@/lib/data";
+import SocialIcon from "./SocialIcon";
 import { EnvelopeIcon, PhoneIcon, PinIcon, SendIcon } from "./icons";
 import { EASE, Reveal, StairText } from "./ui";
 
@@ -92,6 +93,21 @@ export default function Contact() {
               )}
             </div>
           ))}
+          <div className="flex gap-3 pt-4">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                title={s.label}
+                className="flex h-10 w-10 items-center justify-center border border-line/50 text-ink-2 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-ink hover:text-white"
+              >
+                <SocialIcon name={s.icon} className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
         </Reveal>
       </div>
 

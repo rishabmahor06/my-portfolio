@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import TabTitle from "@/components/TabTitle";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -22,7 +23,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rishab Kumar — Full Stack Developer",
+  title: "Portfolio | Rishab Kumar",
+  icons: {
+    icon: [{ url: "/favicon-me.png", type: "image/png" }],
+    apple: "/favicon-me.png",
+  },
   description:
     "Portfolio of Rishab Kumar, a full stack developer building scalable MERN applications with real-time features and AI integration.",
 };
@@ -34,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${jakarta.variable} ${syne.variable} ${spaceMono.variable}`}
     >
       <body>
+        <TabTitle />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

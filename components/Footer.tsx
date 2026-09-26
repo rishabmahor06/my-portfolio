@@ -15,6 +15,7 @@ export default function Footer() {
             <a
               key={l.label}
               href={l.href}
+              {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               className="font-mono text-[10px] uppercase leading-[14px] tracking-[0.06em] text-body transition-colors hover:text-ink"
             >
               {l.label}

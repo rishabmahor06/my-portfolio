@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant short (@media (max-height: 700px));
+
 @theme inline {
   --color-bg: #fcf9f4;
   --color-surface: #f6f3ee;
@@ -19,6 +21,7 @@
 
 /* hide the page scrollbar (scrolling still works) */
 html {
+  overflow-x: clip;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -43,7 +46,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection {

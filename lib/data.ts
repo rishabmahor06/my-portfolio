@@ -20,9 +20,11 @@ export const profile = {
   base: "Delhi",
   address: "Delhi, India",
   resumeUrl: "#",
-  linkedin: "https://linkedin.com",
-  github: "https://github.com",
-  footerTitle: "Rishab Kumar — Portfolio",
+  linkedin: "https://www.linkedin.com/in/rishab-kumar-b45890316",
+  github: "https://github.com/rishabmahor06",
+  instagram: "https://www.instagram.com/rishab_mahor06",
+  x: "https://x.com/home",
+  footerTitle: "Rishab Kumar | Portfolio",
   copyright: "© 2026 RISHAB KUMAR. ALL RIGHTS RESERVED.",
 };
 
@@ -37,17 +39,15 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { label: "01 / Experience", value: "2+ Years Active" },
+  { label: "01 / Experience", value: "2+ Years" },
   { label: "02 / Built", value: "3+ Live Projects" },
-  { label: "03 / Focus", value: "MERN & AI Apps" },
-  { label: "04 / Location", value: "Delhi NCR" },
 ];
 
-export const heroSocials = [
-  { label: "Projects", href: "#projects", icon: "social1" },
-  { label: "GitHub", href: profile.github, icon: "mail" },
-  { label: "LinkedIn", href: profile.linkedin, icon: "social3" },
-  { label: "Email", href: `mailto:${profile.email}`, icon: "social4" },
+export const socials = [
+  { label: "LinkedIn", href: profile.linkedin, icon: "linkedin" },
+  { label: "GitHub", href: profile.github, icon: "github" },
+  { label: "Instagram", href: profile.instagram, icon: "instagram" },
+  { label: "X", href: profile.x, icon: "x" },
 ] as const;
 
 export const aboutFacts = [
@@ -64,93 +64,33 @@ export const aboutParagraphs = [
   "Before that, as a Frontend Developer at Eduspray India, I shipped pixel-perfect, cross-browser interfaces and improved performance by 40% through code-splitting, lazy loading, and optimized asset delivery. I care about responsive UIs, clean code, and performance.",
 ];
 
-export const skillGroups = [
-  {
-    title: "Frontend",
-    icon: "frontend",
-    skills: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "React.js",
-      "Next.js",
-      "Zustand",
-      "Tailwind CSS",
-      "Responsive Design",
-      "WordPress",
-      "Shopify",
-    ],
-  },
-  {
-    title: "Backend",
-    icon: "backend",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "RESTful APIs",
-      "Socket.io",
-      "Authentication & Authorization",
-    ],
-  },
-  {
-    title: "Languages",
-    icon: "growth",
-    skills: ["JavaScript", "TypeScript (familiar)", "PHP (core)"],
-  },
-  {
-    title: "Database",
-    icon: "backend",
-    skills: ["MongoDB", "MySQL"],
-  },
-  {
-    title: "Integrations",
-    icon: "ai",
-    skills: [
-      "Cloudinary",
-      "Imagekit.io",
-      "Google Maps API",
-      "OpenAI API",
-      "Gemini AI",
-      "Razorpay",
-    ],
-  },
-  {
-    title: "Tools",
-    icon: "growth",
-    skills: ["Git", "GitHub", "Postman", "VS Code", "Vercel", "Render"],
-  },
-] as const;
-
 export const projects = [
   {
-    title: "Speed – Real-Time Cab Booking Platform",
+    title: "Speed: Cab Booking Platform",
     badge: "MERN Stack",
     tag: "01 / Feb – Apr 2025",
-    image: null as string | null,
-    desc: "Real-time ride-hailing platform with GPS tracking, live updates and dynamic fare calculation. Socket.io powers instant ride updates for 100+ users, Google Maps handles route optimization, and JWT + bcrypt + refresh tokens secure role-based auth.",
-    stack: ["MERN Stack", "Socket.io", "Google Maps API", "JWT Auth"],
-    live: "#",
-    source: "#",
+    image: "/projects/speed.png" as string | null,
+    stack: ["Node.js", "React.js","Express.js", "MongoDB", "Tailwind CSS","Socket.io", "Google Maps API", "JWT Auth" ],
+    live: "https://uber-frontend-swart.vercel.app",
+    source: "https://github.com/rishabmahor06/uber-frontend",
   },
   {
-    title: "AI Chat: Media Generation Platform",
+    title: "AI Chat: Platform",
     badge: "AI Product",
     tag: "02 / Jul – Aug 2025",
-    image: null as string | null,
-    desc: "AI-powered chatbot with multimodal chat, image generation and voice interaction. OpenAI GPT-4 and Gemini run with fallback and rate limiting for 99.5% uptime, with JWT auth, chat-history dashboard, and a paginated media gallery on Cloudinary.",
+    image: "/projects/ai-chat.png" as string | null,
     stack: ["React.js", "Node.js", "OpenAI API", "Google Gemini", "Cloudinary"],
-    live: "#",
-    source: "#",
+    live: "https://genz-ai-mu.vercel.app",
+    source: "https://github.com/rishabmahor06/genz-ai",
   },
   {
-    title: "Image Enhancer – High Quality Image Enhancer",
+    title: "Image Enhancer: High Quality",
     badge: "Gemini AI",
     tag: "03 / Sep 2025",
-    image: null as string | null,
-    desc: "MERN platform powered by Gemini AI and Cloudinary, with login/signup and role-based access (user/admin dashboard), Razorpay payments, Context API/Redux state management, and a responsive Tailwind CSS interface.",
+    image: "/projects/image-enhancer.png" as string | null,
     stack: ["React.js", "Node.js", "Gemini AI", "Cloudinary"],
-    live: "#",
-    source: "#",
+    live: "https://imageenhancer-beta.vercel.app",
+    source: "https://github.com/rishabmahor06/imageenhancer",
   },
 ];
 
@@ -201,8 +141,7 @@ export const education = [
 ];
 
 export const footerLinks = [
-  { label: "LinkedIn", href: profile.linkedin },
-  { label: "GitHub", href: profile.github },
+  ...socials.map(({ label, href }) => ({ label, href })),
   { label: "Email", href: `mailto:${profile.email}` },
   { label: "Resume", href: profile.resumeUrl },
 ];

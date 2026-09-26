@@ -1,23 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { heroSocials, heroStats, profile } from "@/lib/data";
+import { heroStats, profile, socials } from "@/lib/data";
 import { scrollToId } from "@/lib/scroll";
-import {
-  MailIcon,
-  Social1Icon,
-  Social3Icon,
-  Social4Icon,
-} from "./icons";
+import SocialIcon from "./SocialIcon";
 import { Button, EASE } from "./ui";
+import ProfilePhoto from "./ProfilePhoto";
 import RotatingText from "./RotatingText";
-
-const socialIcons = {
-  social1: Social1Icon,
-  mail: MailIcon,
-  social3: Social3Icon,
-  social4: Social4Icon,
-};
 
 const item = (i: number) => ({
   initial: { opacity: 0, y: 28 },
@@ -29,8 +18,14 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="mx-auto max-w-[1280px] px-5 pb-16 pt-32 md:px-12 md:pb-24 md:pt-40"
+      className="relative mx-auto max-w-[1280px] px-5 pb-16 pt-32 md:px-12 md:pb-24 md:pt-40"
     >
+      {/* desktop only: photo sits on the right, above the social icons (hidden on tablet and mobile) */}
+      <ProfilePhoto
+        size={340}
+        className="absolute right-12 top-[15rem] hidden w-[340px] xl:block"
+      />
+
       <motion.div
         {...item(0)}
         className="inline-flex max-w-full items-center gap-2 rounded-full border border-line/40 bg-surface-2 px-3 py-1"
@@ -46,9 +41,9 @@ export default function Hero() {
 
       <motion.h1
         {...item(1)}
-        className="mt-8 max-w-[896px] font-display text-[40px] font-semibold leading-[1.07] tracking-[-0.03em] sm:text-5xl md:text-[56px]"
+        className="mt-8 max-w-[896px] font-display text-[40px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-5xl md:text-[56px]"
       >
-        Hi There, I&apos;m {profile.name}
+        Hi There, I&apos;m <br /> {profile.name}
       </motion.h1>
 
       <motion.div {...item(2)} className="mt-6">
@@ -64,7 +59,7 @@ export default function Hero() {
 
       <motion.div
         {...item(4)}
-        className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 border border-line/30 bg-surface p-5 sm:p-6 lg:inline-grid lg:grid-cols-4 lg:gap-x-4"
+        className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 border border-line/30 bg-surface p-5 sm:p-6 lg:inline-grid lg:grid-cols-2 lg:gap-x-4"
       >
         {heroStats.map((s) => (
           <div key={s.label} className="min-w-0 lg:min-w-[168px]">
@@ -89,21 +84,21 @@ export default function Hero() {
           Contact me
         </Button>
         <div className="flex gap-4 sm:ml-auto">
-          {heroSocials.map((s) => {
-            const Icon = socialIcons[s.icon];
-            return (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.92 }}
-                className="flex h-[34px] w-[30px] items-center justify-center border border-line/50 text-ink-2 transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-white"
-              >
-                <Icon />
-              </motion.a>
-            );
-          })}
+          {socials.map((s) => (
+            <motion.a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              title={s.label}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.92 }}
+              className="flex h-10 w-10 items-center justify-center border border-line/50 text-ink-2 transition-colors duration-200 hover:border-ink hover:bg-ink hover:text-white"
+            >
+              <SocialIcon name={s.icon} className="h-4 w-4" />
+            </motion.a>
+          ))}
         </div>
       </motion.div>
     </section>
