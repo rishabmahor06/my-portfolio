@@ -111,6 +111,14 @@ export const projects = [
     live: "https://optikamumbai.in",
     source: "https://optikamumbai.in",
   },
+  {
+    title: "The Indian Optician Magazine",
+    badge: "Magazine Website",
+    image: "/projects/the-indian-optician-magazine.png" as string | null,
+    stack: ["Wordpress",],
+    live: "https://tionet.in",
+    source: "https://tionet.in",
+  },
 ];
 
 export const experience = [

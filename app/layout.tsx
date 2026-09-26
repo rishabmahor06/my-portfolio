@@ -37,8 +37,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${jakarta.variable} ${syne.variable} ${spaceMono.variable}`}
+      // Browser extensions (e.g. ones that add `foxified` attributes) edit <html>/<body> before
+      // React loads; without this React logs a hydration-mismatch warning that isn't a real bug.
+      suppressHydrationWarning
     >
-      <body>
+      <body suppressHydrationWarning>
         <TabTitle />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
