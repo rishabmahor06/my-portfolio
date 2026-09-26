@@ -1,4 +1,4 @@
-import { siGithub, siInstagram, siX } from "simple-icons";
+import { siGithub, siInstagram, siWhatsapp, siX } from "simple-icons";
 
 // LinkedIn's logo isn't shipped by simple-icons, so its path lives here.
 const LINKEDIN =
@@ -9,6 +9,7 @@ const paths = {
   github: siGithub.path,
   instagram: siInstagram.path,
   x: siX.path,
+  whatsapp: siWhatsapp.path,
 };
 
 export type SocialName = keyof typeof paths;

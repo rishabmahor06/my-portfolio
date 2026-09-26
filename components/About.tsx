@@ -1,5 +1,6 @@
 import { aboutFacts, aboutParagraphs, profile } from "@/lib/data";
 import type { ReactNode } from "react";
+import AskAI from "./AskAI";
 import { ArrowIcon, EnvelopeIcon, PhoneIcon, PinIcon } from "./icons";
 import { Reveal, StairText } from "./ui";
 
@@ -114,6 +115,9 @@ export default function About() {
               icon={<EnvelopeIcon className="h-3.5 w-[18px]" />}
             />
           </div>
+          <Reveal delay={0.3}>
+            <AskAI />
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-6">

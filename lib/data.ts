@@ -20,10 +20,15 @@ export const profile = {
   base: "Delhi",
   address: "Delhi, India",
   resumeUrl: "#",
+  siteUrl: "https://rishabmahor.vercel.app",
   linkedin: "https://www.linkedin.com/in/rishab-kumar-b45890316",
   github: "https://github.com/rishabmahor06",
   instagram: "https://www.instagram.com/rishab_mahor06",
   x: "https://x.com/home",
+  // opens a WhatsApp chat directly (wa.me needs the number with country code, digits only)
+  whatsapp: `https://wa.me/917534851282?text=${encodeURIComponent(
+    "Hi Rishab, I saw your portfolio and would like to connect.",
+  )}`,
   footerTitle: "Rishab Kumar | Portfolio",
   copyright: "© 2026 RISHAB KUMAR. ALL RIGHTS RESERVED.",
 };
@@ -48,6 +53,7 @@ export const socials = [
   { label: "GitHub", href: profile.github, icon: "github" },
   { label: "Instagram", href: profile.instagram, icon: "instagram" },
   { label: "X", href: profile.x, icon: "x" },
+  { label: "WhatsApp", href: profile.whatsapp, icon: "whatsapp" },
 ] as const;
 
 export const aboutFacts = [
