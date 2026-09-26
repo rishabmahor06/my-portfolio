@@ -180,12 +180,12 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
 
           <div
             data-open={open || hover}
-            className="absolute inset-0 flex translate-y-full items-center justify-center gap-3 bg-ink px-6 opacity-0 transition-[translate,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 data-[open=true]:pointer-events-auto data-[open=true]:translate-y-0 data-[open=true]:opacity-100"
+            className="absolute inset-0 flex translate-y-full items-center justify-center gap-3 bg-bg px-6 opacity-0 transition-[translate,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 data-[open=true]:pointer-events-auto data-[open=true]:translate-y-0 data-[open=true]:opacity-100"
           >
             <a
               href={p.live}
               {...external(p.live)}
-              className="mono-btn group/stair inline-flex items-center gap-2 bg-white px-5 py-3 text-ink transition-colors duration-300 hover:bg-surface-2"
+              className="mono-btn group/stair inline-flex items-center gap-2 bg-ink px-5 py-3 text-white transition-colors duration-300 hover:bg-body"
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
             >
@@ -195,7 +195,7 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
             <a
               href={p.source}
               {...external(p.source)}
-              className="mono-btn group/stair inline-flex items-center gap-2 border border-white/60 px-5 py-3 text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink"
+              className="mono-btn group/stair inline-flex items-center gap-2 bg-ink px-5 py-3 text-white transition-colors duration-300 hover:bg-body"
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
             >
