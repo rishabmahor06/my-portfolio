@@ -74,7 +74,6 @@ export const projects = [
   {
     title: "Speed: Cab Booking Platform",
     badge: "MERN Stack",
-    tag: "01 / Feb – Apr 2025",
     image: "/projects/speed.png" as string | null,
     stack: ["Node.js", "React.js","Express.js", "MongoDB", "Tailwind CSS","Socket.io", "Google Maps API", "JWT Auth" ],
     live: "https://uber-frontend-swart.vercel.app",
@@ -83,7 +82,6 @@ export const projects = [
   {
     title: "AI Chat: Platform",
     badge: "AI Product",
-    tag: "02 / Jul – Aug 2025",
     image: "/projects/ai-chat.png" as string | null,
     stack: ["React.js", "Node.js", "OpenAI API", "Google Gemini", "Cloudinary"],
     live: "https://genz-ai-mu.vercel.app",
@@ -92,11 +90,26 @@ export const projects = [
   {
     title: "Image Enhancer: High Quality",
     badge: "Gemini AI",
-    tag: "03 / Sep 2025",
     image: "/projects/image-enhancer.png" as string | null,
     stack: ["React.js", "Node.js", "Gemini AI", "Cloudinary"],
     live: "https://imageenhancer-beta.vercel.app",
     source: "https://github.com/rishabmahor06/imageenhancer",
+  },
+  {
+    title: "Inoptics.in: Event Management",
+    badge: "Saas Product",
+    image: "/projects/inoptics.in.png" as string | null,
+    stack: ["React.js", "Node.js", "Php","Laravel", "Zustand", "Cloudflare", "Php Mailer", "Bluehost"],
+    live: "https://inoptics.in",
+    source: "https://inoptics.in",
+  },
+  {
+    title: "optikamumbai.in: Event Management",
+    badge: "Saas Product",
+    image: "/projects/optikamumbai.in.png" as string | null,
+    stack: ["React.js", "Node.js", "Php","Laravel", "Zustand", "Google Recaptcha", "Php Mailer", "Bluehost"],
+    live: "https://optikamumbai.in",
+    source: "https://optikamumbai.in",
   },
 ];
 

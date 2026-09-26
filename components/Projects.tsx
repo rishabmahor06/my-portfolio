@@ -171,9 +171,6 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
 
         {/* bottom: tech stack, with the action overlay on hover */}
         <div className="relative flex flex-1 flex-col overflow-hidden border-t border-line/30 p-6">
-          <p className="font-mono text-[10px] uppercase leading-[14px] tracking-[0.06em] text-muted">
-            [ {p.tag} ]
-          </p>
           <h3 className="h3 mt-1">{p.title}</h3>
           <div className="mt-4 flex flex-wrap gap-2">
             {p.stack.map((s) => (
